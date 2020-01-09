@@ -1,16 +1,24 @@
 public class Student {
-private String FIO; // 40 символов
-private String subject; // 20 символов
-private int mark; // 1 символ
+private String FIO; // 40 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+private String subject; // 20 пїЅпїЅпїЅпїЅпїЅпїЅпїЅпїЅ
+private int mark; // 1 пїЅпїЅпїЅпїЅпїЅпїЅ
 
 	public Student() {}
 	
+	public boolean isCorrect(String info) {
+		String[] part = info.split(",");
+		if((part[0].trim().length()<=40) && (part[1].trim().length()<=20) && (part[2].trim().length() == 1)) {
+			return true;
+		}
+		return false;
+		}
+	
 	public Student setInfo(String info) {
 		String[] part = info.split(",");
-		this.FIO = part[0].trim();
-		this.subject = part[1].trim();
-		this.mark = Integer.parseInt(part[2].trim());
-		return this;
+			this.FIO = part[0].trim();
+			this.subject = part[1].trim();
+			this.mark = Integer.parseInt(part[2].trim());
+			return this;
 	}
 	
 	public String getString() {

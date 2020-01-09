@@ -12,7 +12,10 @@ public class Marks {
 		try (FileReader fr = new FileReader(fileName); Scanner scan = new Scanner(fr)) {
 			while (scan.hasNextLine()) {
 				Student nStudent = new Student();
-				students.add(nStudent.setInfo(scan.nextLine()));
+				String info = scan.nextLine();
+				if (nStudent.isCorrect(info)) {
+					students.add(nStudent.setInfo(info));
+				}
 			}
 			fr.close();
 		} catch (IOException e) {
